@@ -1,0 +1,59 @@
+# Visual Studio
+.vs/
+
+# Build results
+Src/MasterNet.Application/bin/
+Src/MasterNet.Application/obj/
+Src/MasterNet.Domain/bin/
+Src/MasterNet.Domain/obj/
+Src/MasterNet.Infraestructure/bin/
+Src/MasterNet.Infraestructure/obj/
+Src/MasterNet.Persistence/bin/
+Src/MasterNet.Persistence/obj/
+Src/MasterNet.WebApi/bin/
+Src/MasterNet.WebApi/obj/
+
+# Solution-specific
+masternet.sln
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Package directories
+packages/
+node_modules/
+
+# Environment
+.env
+
+# Generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# ASP.NET stuff
+Src/MasterNet.WebApi/appsettings.*.json
+
+# Docker
+**/docker-compose.override.yml
+
+# Secrets
+secrets.json
+
+# NuGet
+*.nupkg
+
+# Misc
+*.DS_Store
+Thumbs.db
