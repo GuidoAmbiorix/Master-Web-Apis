@@ -1,59 +1,38 @@
-# Visual Studio
-.vs/
+# Build and binary files
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.nuget
 
-# Build results
-src/MasterNet.Application/bin/Debug/
-src/MasterNet.Application/obj/
-src/MasterNet.Domain/bin/
-src/MasterNet.Domain/obj/
-src/MasterNet.Infraestructure/bin/
-src/MasterNet.Infraestructure/obj/
-src/MasterNet.Persistence/bin/
-src/MasterNet.Persistence/obj/
-src/MasterNet.WebApi/bin/
-src/MasterNet.WebApi/obj/
-
-# Solution-specific
-masternet.sln
-
-# User-specific files
+# User-specific settings
+.vscode/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Logs
+# Logs and debugging
 *.log
-
-# Package directories
-packages/
-node_modules/
-
-# Environment
-.env
-
-# Generated files
-*.dll
-*.exe
-*.pdb
+*.tlog
 *.cache
-
-# Rider / JetBrains
-.idea/
-*.iml
-
-# ASP.NET stuff
-Src/MasterNet.WebApi/appsettings.*.json
-
-# Docker
-**/docker-compose.override.yml
-
-# Secrets
-secrets.json
+*.vs/
+appsettings.*.json
 
 # NuGet
 *.nupkg
+.nuget/
 
-# Misc
-*.DS_Store
+# Entity Framework Migrations
+Migrations/
+DatabaseGenerated/
+
+# Rider and JetBrains
+.idea/
+*.sln.iml
+
+# Mac/Linux/Windows system files
+.DS_Store
 Thumbs.db
