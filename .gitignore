@@ -2,16 +2,16 @@
 .vs/
 
 # Build results
-Src/MasterNet.Application/bin/
-Src/MasterNet.Application/obj/
-Src/MasterNet.Domain/bin/
-Src/MasterNet.Domain/obj/
-Src/MasterNet.Infraestructure/bin/
-Src/MasterNet.Infraestructure/obj/
-Src/MasterNet.Persistence/bin/
-Src/MasterNet.Persistence/obj/
-Src/MasterNet.WebApi/bin/
-Src/MasterNet.WebApi/obj/
+src/MasterNet.Application/bin/
+src/MasterNet.Application/obj/
+src/MasterNet.Domain/bin/
+src/MasterNet.Domain/obj/
+src/MasterNet.Infraestructure/bin/
+src/MasterNet.Infraestructure/obj/
+src/MasterNet.Persistence/bin/
+src/MasterNet.Persistence/obj/
+src/MasterNet.WebApi/bin/
+src/MasterNet.WebApi/obj/
 
 # Solution-specific
 masternet.sln
