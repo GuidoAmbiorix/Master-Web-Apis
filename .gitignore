@@ -2,8 +2,8 @@
 .vs/
 
 # Build results
-src\MasterNet.Application\bin\
-src\MasterNet.Application\obj\
+src/MasterNet.Application/bin/Debug/
+src/MasterNet.Application/obj/
 src/MasterNet.Domain/bin/
 src/MasterNet.Domain/obj/
 src/MasterNet.Infraestructure/bin/
