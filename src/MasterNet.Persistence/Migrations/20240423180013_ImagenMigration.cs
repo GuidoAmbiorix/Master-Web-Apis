@@ -296,8 +296,8 @@ namespace MasterNet.Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "c9092e39-2a01-4c8e-8f35-4a6cee27336f", null, "ADMIN", "ADMIN" },
-                    { "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729", null, "CLIENT", "CLIENT" }
+                    { "035d70d4-d4e7-45a2-9f75-74ac529e91ed", null, "ADMIN", "ADMIN" },
+                    { "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4", null, "CLIENT", "CLIENT" }
                 });
 
             migrationBuilder.InsertData(
@@ -305,15 +305,15 @@ namespace MasterNet.Persistence.Migrations
                 columns: new[] { "Id", "Descripcion", "FechaPublicacion", "Titulo" },
                 values: new object[,]
                 {
-                    { new Guid("230d3e08-fa39-4710-98cd-18b3fff6346a"), "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(253), "Practical Metal Mouse" },
-                    { new Guid("4f26bee2-f49f-43f6-a375-8ff67b5186e2"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(240), "Rustic Cotton Table" },
-                    { new Guid("89d4a6fb-538e-4bd9-bf9d-089d8a5a0e18"), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(278), "Licensed Granite Towels" },
-                    { new Guid("ca5a6856-6500-466b-abde-324f40f04368"), "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(213), "Ergonomic Plastic Hat" },
-                    { new Guid("d6515399-e5c5-4bd4-a8de-94ee23c20c9b"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(181), "Incredible Fresh Pizza" },
-                    { new Guid("e2545b68-19a6-48ed-a124-402d41cd1b4d"), "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(146), "Incredible Rubber Ball" },
-                    { new Guid("e96393a8-d248-4a4c-85ce-4b3c5dbbfed0"), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(197), "Ergonomic Wooden Bike" },
-                    { new Guid("e996ac26-9dfa-4057-8336-1f2ea212c846"), "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(266), "Handmade Metal Fish" },
-                    { new Guid("f3775838-a1cb-4dc8-9e69-734ad9cc6916"), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(227), "Practical Steel Shoes" }
+                    { new Guid("21832173-49eb-4c12-998d-1c72ff76645a"), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3653), "Incredible Granite Keyboard" },
+                    { new Guid("60638e89-b745-4637-a290-082ac4a4e194"), "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3761), "Intelligent Cotton Shoes" },
+                    { new Guid("8aa50d01-d50f-419b-a498-aee133481c1e"), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3683), "Unbranded Cotton Tuna" },
+                    { new Guid("adfdb061-a174-49b6-ba26-d56e59079a31"), "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3789), "Refined Cotton Chicken" },
+                    { new Guid("bd5fb5fe-2962-420b-b25f-8b9bda1b7fc9"), "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3731), "Handmade Wooden Towels" },
+                    { new Guid("deb9f6ae-6466-48a1-92c1-8e5d419ecf68"), "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3716), "Practical Granite Pizza" },
+                    { new Guid("e17ae8e1-d605-4360-81a4-5b705bfa67c6"), "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3700), "Refined Fresh Cheese" },
+                    { new Guid("f71a0693-e5a5-4808-9179-f47eba8b61f0"), "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3748), "Rustic Plastic Towels" },
+                    { new Guid("fa0ffd86-4db2-43fb-b537-01315aab3776"), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3773), "Fantastic Steel Shirt" }
                 });
 
             migrationBuilder.InsertData(
@@ -321,42 +321,42 @@ namespace MasterNet.Persistence.Migrations
                 columns: new[] { "Id", "Apellidos", "Grado", "Nombre" },
                 values: new object[,]
                 {
-                    { new Guid("28693ee1-072b-41b6-8374-0e53fe75027c"), "Wyman", "Regional Data Agent", "Elton" },
-                    { new Guid("3159ac42-375f-47f4-baa2-06ca7201a149"), "Balistreri", "Direct Infrastructure Orchestrator", "Elena" },
-                    { new Guid("372323b2-c7c1-4bde-b7ea-c25864531cd7"), "Armstrong", "Corporate Accounts Supervisor", "Elian" },
-                    { new Guid("3cdd28e3-116e-4d96-b787-43590f3622cc"), "Stark", "Direct Response Technician", "Ricky" },
-                    { new Guid("85bce002-e242-427e-9225-6d8a42dc65cb"), "Corwin", "Direct Implementation Assistant", "Wade" },
-                    { new Guid("9d09c99c-5b6a-4bad-b5b8-59fcf086254d"), "Williamson", "Regional Creative Producer", "Della" },
-                    { new Guid("b8de6e75-5648-4f24-aca6-da23df459680"), "Bergstrom", "Internal Group Officer", "Emmett" },
-                    { new Guid("bbb4b299-a1a1-40e7-b8c9-2429a472ecc8"), "Kunde", "Internal Security Associate", "Marion" },
-                    { new Guid("e1328409-796a-4e7e-bfe1-ae27ffe99164"), "Pfannerstill", "Legacy Usability Facilitator", "Chester" },
-                    { new Guid("f068939b-2d5f-4524-b387-c507df9dcd5f"), "Feil", "Lead Configuration Producer", "Myrtie" }
+                    { new Guid("0245cdf2-530e-42a3-813e-c71184f2a941"), "Haag", "International Intranet Architect", "Ernestina" },
+                    { new Guid("0bb5dafa-ddaa-4fc4-bb5a-3bdf657715b9"), "Koepp", "Product Quality Designer", "Pedro" },
+                    { new Guid("26166ea6-044f-438d-974e-8750fcee3850"), "Leuschke", "National Directives Technician", "Colby" },
+                    { new Guid("3eb3f29a-2bbd-462b-944c-53688fdee1aa"), "Sporer", "Central Branding Developer", "Moshe" },
+                    { new Guid("4e07dcdd-e353-4f43-a0b8-bde6b7f59b42"), "Block", "Dynamic Communications Director", "Floyd" },
+                    { new Guid("6676f127-fad7-4f32-8bfb-49928052d8ee"), "Hammes", "Dynamic Intranet Planner", "Lucie" },
+                    { new Guid("a272713b-df29-4baa-8272-4d83feb9ef33"), "Brekke", "Internal Intranet Designer", "Viviane" },
+                    { new Guid("a6e653eb-6436-4185-ad6a-9ec51f11ee8c"), "Howe", "Dynamic Infrastructure Strategist", "Jarod" },
+                    { new Guid("b3e9130a-8bb5-4a23-99c5-4eed5a244058"), "Champlin", "Legacy Communications Analyst", "Deion" },
+                    { new Guid("f9ec5649-5243-4c39-9081-db05340ce47d"), "Feil", "Forward Integration Technician", "Emmy" }
                 });
 
             migrationBuilder.InsertData(
                 table: "precios",
                 columns: new[] { "Id", "Nombre", "PrecioActual", "PrecioPromocion" },
-                values: new object[] { new Guid("9fade2d0-9b70-4c48-b838-01e5c04c8d3f"), "Precio Regular", 10.0m, 8.0m });
+                values: new object[] { new Guid("9d14524c-95ee-4630-afc5-5f9364389925"), "Precio Regular", 10.0m, 8.0m });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoleClaims",
                 columns: new[] { "Id", "ClaimType", "ClaimValue", "RoleId" },
                 values: new object[,]
                 {
-                    { 1, "POLICIES", "CURSO_READ", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 2, "POLICIES", "CURSO_UPDATE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 3, "POLICIES", "CURSO_WRITE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 4, "POLICIES", "CURSO_DELETE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 5, "POLICIES", "INSTRUCTOR_CREATE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 6, "POLICIES", "INSTRUCTOR_READ", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 7, "POLICIES", "INSTRUCTOR_UPDATE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 8, "POLICIES", "COMENTARIO_READ", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 9, "POLICIES", "COMENTARIO_DELETE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 10, "POLICIES", "COMENTARIO_CREATE", "c9092e39-2a01-4c8e-8f35-4a6cee27336f" },
-                    { 11, "POLICIES", "CURSO_READ", "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729" },
-                    { 12, "POLICIES", "INSTRUCTOR_READ", "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729" },
-                    { 13, "POLICIES", "COMENTARIO_READ", "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729" },
-                    { 14, "POLICIES", "COMENTARIO_CREATE", "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729" }
+                    { 1, "POLICIES", "CURSO_READ", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 2, "POLICIES", "CURSO_UPDATE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 3, "POLICIES", "CURSO_WRITE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 4, "POLICIES", "CURSO_DELETE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 5, "POLICIES", "INSTRUCTOR_CREATE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 6, "POLICIES", "INSTRUCTOR_READ", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 7, "POLICIES", "INSTRUCTOR_UPDATE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 8, "POLICIES", "COMENTARIO_READ", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 9, "POLICIES", "COMENTARIO_DELETE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 10, "POLICIES", "COMENTARIO_CREATE", "035d70d4-d4e7-45a2-9f75-74ac529e91ed" },
+                    { 11, "POLICIES", "CURSO_READ", "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4" },
+                    { 12, "POLICIES", "INSTRUCTOR_READ", "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4" },
+                    { 13, "POLICIES", "COMENTARIO_READ", "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4" },
+                    { 14, "POLICIES", "COMENTARIO_CREATE", "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4" }
                 });
 
             migrationBuilder.CreateIndex(

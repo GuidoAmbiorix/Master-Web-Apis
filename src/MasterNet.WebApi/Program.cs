@@ -12,31 +12,47 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(builder.Configuration);
-builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection(nameof(CloudinarySettings)));
-builder.Services.AddScoped<IPhotoService,PhotoService>();
+builder.Services.AddIdentityServices(builder.Configuration);
+builder.Services.AddPoliciesService(); 
+
+
+builder.Services
+.Configure<CloudinarySettings>
+(builder.Configuration.GetSection(nameof(CloudinarySettings)));
+
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 
 //builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped(typeof(IReportService<>), typeof(ReportService<>));
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllers();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-builder.Services.AddIdentityCore<AppUser>(opt => {
-    opt.Password.RequireNonAlphanumeric = false;
-    opt.User.RequireUniqueEmail = true;
-}).AddRoles<IdentityRole>().AddEntityFrameworkStores<MasterNetDbContext>();
+// builder.Services.AddEndpointsApiExplorer();
+// builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerDocumentation();
 
+builder.Services.AddCors(o => o.AddPolicy("corsapp",builder =>{
+builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     app.UseSwagger();
+//     app.UseSwaggerUI();
+// }
+
+app.useSwaggerDocumentation();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseCors("corsapp");
 
 await app.SeedDataAuthentication();
 

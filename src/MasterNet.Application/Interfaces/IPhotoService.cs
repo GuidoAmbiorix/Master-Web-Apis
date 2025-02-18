@@ -5,7 +5,8 @@ namespace MasterNet.Application.Interfaces;
 
 public interface IPhotoService
 {
-    Task<PhotoUploadResult> AddPhoto(IFormFile file);
-    Task<string> DeletePhoto(string publicId);
 
+    Task<PhotoUploadResult> AddPhoto(IFormFile file);
+
+    Task<string> DeletePhoto(string publicId);
 }

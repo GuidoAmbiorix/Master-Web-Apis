@@ -10,14 +10,18 @@ namespace MasterNet.Application.Instructores.GetInstructores;
 
 public class GetInstructoresQuery
 {
-    public record GetInstructoresQueryRequest:IRequest<Result<PagedList<InstructorResponse>>>
+
+    public record GetInstructoresQueryRequest
+    : IRequest<Result<PagedList<InstructorResponse>>>
     {
         public GetInstructoresRequest? InstructorRequest {get;set;}
+
     }
 
-    internal class GetInstructoresQueryHandler : IRequestHandler<GetInstructoresQueryRequest, Result<PagedList<InstructorResponse>>>
-    {
 
+    internal class GetInstructoresQueryHandler
+    : IRequestHandler<GetInstructoresQueryRequest, Result<PagedList<InstructorResponse>>>
+    {
         private readonly MasterNetDbContext _context;
         private readonly IMapper _mapper;
 
@@ -27,53 +31,64 @@ public class GetInstructoresQuery
             _mapper = mapper;
         }
 
-        public async Task<Result<PagedList<InstructorResponse>>> Handle(GetInstructoresQueryRequest request, CancellationToken cancellationToken)
+        public async Task<Result<PagedList<InstructorResponse>>> Handle(
+            GetInstructoresQueryRequest request, 
+            CancellationToken cancellationToken
+        )
         {
-           IQueryable<Instructor> queryable = _context.Instructores!;
+           
+            IQueryable<Instructor> queryable = _context.Instructores!;
 
-           var predicate = ExpressionBuilder.New<Instructor>();
-
-           if(!string.IsNullOrEmpty(request.InstructorRequest!.Nombre))
-           {
-            predicate = predicate.And(y => y.Nombre!.Contains(request.InstructorRequest!.Nombre));
-           }
-
-           if(!string.IsNullOrEmpty(request.InstructorRequest!.Apellido))
-           {
-            predicate = predicate.And(y => y.Apellidos!.Contains(request.InstructorRequest!.Apellido));
-           }
-
-           if(!string.IsNullOrEmpty(request.InstructorRequest.OrderBy))
-           {
-            Expression<Func<Instructor,object>>? orderBySelector =
-            request.InstructorRequest.OrderBy.ToLower() switch
+            var predicate = ExpressionBuilder.New<Instructor>();
+            if(!string.IsNullOrEmpty(request.InstructorRequest!.Nombre))
             {
-                "nombre" => instructor => instructor.Nombre!,
-                "apellido" => instructor => instructor.Apellidos!,
-                _ => insructor => insructor.Nombre!
-            };
+                predicate = predicate
+                .And(y => y.Nombre!.Contains(request.InstructorRequest!.Nombre));
+            }
 
-            bool orderBy = request.InstructorRequest.OrderAsc.HasValue
-            ? request.InstructorRequest.OrderAsc.Value
-            : true;
+            if(!string.IsNullOrEmpty(request.InstructorRequest!.Apellido))
+            {
+                predicate = predicate
+                .And(y => y.Apellidos!.Contains(request.InstructorRequest!.Apellido));
+            }
 
-            queryable = orderBy ? queryable.OrderBy(orderBySelector) : queryable.OrderByDescending(orderBySelector);
+            if(!string.IsNullOrEmpty(request.InstructorRequest.OrderBy))
+            {
+                Expression<Func<Instructor, object>>? orderBySelector = 
+                request.InstructorRequest.OrderBy.ToLower() switch 
+                {
+                    "nombre" => instructor => instructor.Nombre!,
+                    "apellido" => instructor => instructor.Apellidos!,
+                    _ => instructor => instructor.Nombre!
+                };
 
-           }
+                bool orderBy = request.InstructorRequest.OrderAsc.HasValue 
+                            ? request.InstructorRequest.OrderAsc.Value
+                            : true;
 
-           queryable = queryable.Where(predicate);
+                queryable = orderBy 
+                            ? queryable.OrderBy(orderBySelector)
+                            : queryable.OrderByDescending(orderBySelector);
+            }
 
-           var instructoresQuery =
-            queryable
-            .ProjectTo<InstructorResponse>(_mapper.ConfigurationProvider)
-            .AsQueryable();
+            queryable = queryable.Where(predicate);
 
-            var pagination = await PagedList<InstructorResponse>.CreateAsync(instructoresQuery,request.InstructorRequest.PageNumber,request.InstructorRequest.PageSize);
+            var instructoresQuery = queryable
+                        .ProjectTo<InstructorResponse>(_mapper.ConfigurationProvider)
+                        .AsQueryable();
+
+            var pagination = await PagedList<InstructorResponse>
+                .CreateAsync(instructoresQuery, 
+                request.InstructorRequest.PageNumber,
+                request.InstructorRequest.PageSize
+                );
 
             return Result<PagedList<InstructorResponse>>.Success(pagination);
         }
     }
 }
+
+
 
 
 public record InstructorResponse(
@@ -87,4 +102,3 @@ public record InstructorResponse(
     {
     }
 }
-

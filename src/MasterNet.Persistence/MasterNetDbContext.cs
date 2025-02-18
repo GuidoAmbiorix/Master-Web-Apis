@@ -62,11 +62,15 @@ public class MasterNetDbContext : IdentityDbContext<AppUser>
                 j => j
                     .HasOne(p => p.Precio)
                     .WithMany(p => p.CursoPrecios)
-                    .HasForeignKey(p => p.PrecioId),
+                    .HasForeignKey(p => p.PrecioId)
+                    
+                    ,
                 j => j
                     .HasOne(p=>p.Curso)
                     .WithMany(p => p.CursoPrecios)
-                    .HasForeignKey(p => p.CursoId),
+                    .HasForeignKey(p => p.CursoId)
+                    
+                    ,
                 j => 
                 { 
                     j.HasKey(t => new {t.PrecioId, t.CursoId});
@@ -82,11 +86,14 @@ public class MasterNetDbContext : IdentityDbContext<AppUser>
             j => j
                 .HasOne(p => p.Instructor)
                 .WithMany(p => p.CursoInstructores)
-                .HasForeignKey(p=>p.InstructorId),
+                .HasForeignKey(p=>p.InstructorId)
+                
+                ,
             j => j
                 .HasOne(p => p.Curso)
                 .WithMany(p => p.CursoInstructores)
-                .HasForeignKey(p => p.CursoId),
+                .HasForeignKey(p => p.CursoId)
+                ,
             j => {
                 j.HasKey(t => new {t.InstructorId, t.CursoId});
             }

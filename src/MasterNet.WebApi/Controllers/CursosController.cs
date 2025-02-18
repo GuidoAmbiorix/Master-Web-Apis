@@ -1,12 +1,17 @@
+using System.Net;
 using MasterNet.Application.Core;
-using MasterNet.Application.Core.GetCursos;
 using MasterNet.Application.Cursos.CursoCreate;
-using MasterNet.Application.Cursos.CursoReporteExcel;
+using MasterNet.Application.Cursos.CursoUpdate;
+using MasterNet.Application.Cursos.GetCurso;
+using MasterNet.Application.Cursos.GetCursos;
+using MasterNet.Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using static MasterNet.Application.Cursos.CursoCreate.CursoCreateCommand;
+using static MasterNet.Application.Cursos.CursoDelete.CursoDeleteCommand;
 using static MasterNet.Application.Cursos.CursoReporteExcel.CursoReporteExcelQuery;
+using static MasterNet.Application.Cursos.CursoUpdate.CursoUpdateCommand;
 using static MasterNet.Application.Cursos.GetCurso.GetCursoQuery;
 using static MasterNet.Application.Cursos.GetCursos.GetCursosQuery;
 
@@ -17,51 +22,116 @@ namespace MasterNet.WebApi.Controllers;
 public class CursosController : ControllerBase
 {
     private readonly ISender _sender;
-    public CursosController(ISender sender)   
+    public CursosController(ISender sender)
     {
         _sender = sender;
     }
 
-    [HttpPost("create")]
+    [AllowAnonymous]
+    [HttpGet]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<PagedList<CursoResponse>>> PaginationCursos(
+        [FromQuery] GetCursosRequest request,
+        CancellationToken cancellationToken
+    )
+    {
+
+        var query = new GetCursosQueryRequest { CursosRequest = request };
+        var resultado = await _sender.Send(query, cancellationToken);
+
+        return resultado.IsSuccess ? Ok(resultado.Value) : NotFound();
+    }
+
+
+    [Authorize(Policy = PolicyMaster.CURSO_WRITE)]
+    [HttpPost]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<ActionResult<Result<Guid>>> CursoCreate(
         [FromForm] CursoCreateRequest request,
         CancellationToken cancellationToken
     )
     {
         var command = new CursoCreateCommandRequest(request);
-        return  await _sender.Send(command, cancellationToken);
+        var resultado = await _sender.Send(command, cancellationToken);
+        return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
     }
-    
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> CursoGet(
-        Guid id, 
+    [Authorize(Policy = PolicyMaster.CURSO_UPDATE)]
+    [HttpPut("{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<Result<Guid>>> CursoUpdate(
+        [FromBody] CursoUpdateRequest request,
+        Guid id,
         CancellationToken cancellationToken
     )
     {
-        var query = new GetCursoQueryRequest { Id = id};
-         var resultado = await _sender.Send(query, cancellationToken);
+        var command = new CursoUpdateCommandRequest(request, id);
+        var resultado = await _sender.Send(command, cancellationToken);
+        return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
+    }
 
-         return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
+    [Authorize(Policy = PolicyMaster.CURSO_DELETE)]
+    [HttpDelete("{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<Unit>> CursoDelete(
+           Guid id,
+           CancellationToken cancellationToken
+           )
+    {
+        var command = new CursoDeleteCommandRequest(id);
+        var resultado = await _sender.Send(command, cancellationToken);
+        return resultado.IsSuccess ? Ok() : BadRequest();
     }
 
 
+    // 1*****RESPONSE CON TIPO DE DATO ESPECIFICO
+    // [HttpGet("{id}")]
+    // public async Task<CursoResponse> CursoGet(
+    //     Guid id,
+    //     CancellationToken cancellationToken
+    // )
+    // {
+    //     var query = new GetCursoQueryRequest { Id = id };
+    //     var resultado = await _sender.Send(query, cancellationToken);
+    //     return resultado.IsSuccess ? resultado.Value! : null!;
+    // }
+
+
+    // 2. **** Response de tipo IActionResult
+    // [HttpGet("{id}")]
+    // [ProducesResponseType(typeof(CursoResponse), (int)HttpStatusCode.OK)]
+    // public async Task<IActionResult> CursoGet(
+    //     Guid id,
+    //     CancellationToken cancellationToken
+    // )
+    // {
+    //     var query = new GetCursoQueryRequest { Id = id };
+    //     var resultado = await _sender.Send(query, cancellationToken);
+    //     return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
+    // }
+
+    //*** 3. Response con ActionResult<T>
+    [AllowAnonymous]
+    [HttpGet("{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<ActionResult<CursoResponse>> CursoGet(
+        Guid id,
+        CancellationToken cancellationToken
+    )
+    {
+        var query = new GetCursoQueryRequest { Id = id };
+        var resultado = await _sender.Send(query, cancellationToken);
+        return resultado.IsSuccess ? Ok(resultado.Value) : BadRequest();
+    }
+
+    [AllowAnonymous]
     [HttpGet("reporte")]
     public async Task<IActionResult> ReporteCSV(CancellationToken cancellationToken)
     {
         var query = new CursoReporteExcelQueryRequest();
-        var resultado =  await _sender.Send(query, cancellationToken);
+        var resultado = await _sender.Send(query, cancellationToken);
         byte[] excelBytes = resultado.ToArray();
         return File(excelBytes, "text/csv", "cursos.csv");
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> PaginationCursos([FromQuery] GetCursosRequest request, CancellationToken cancellationToken)
-    {
-       var query = new GetCursosQueryRequest { CursosRequest = request};
-       var resultado = await _sender.Send(query,cancellationToken);
-
-       return resultado.IsSuccess ? Ok(resultado.Value) : NotFound();
     }
 
 

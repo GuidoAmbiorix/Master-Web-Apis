@@ -5,18 +5,21 @@ using MasterNet.Application.Core;
 using MasterNet.Domain;
 using MasterNet.Persistence;
 using MediatR;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace MasterNet.Application.Precios.GetPrecios;
 
-public record GetPreciosQueryRequest : IRequest<Result<PagedList<PrecioResponse>>>
+public class GetPreciosQuery
 {
-    public GetPreciosRequest? PreciosRequest { get; set; }
-}
 
-internal class GetPreciosQueryHandler : IRequestHandler<GetPreciosQueryRequest, Result<PagedList<PrecioResponse>>>
-{
-    
+    public record GetPreciosQueryRequest 
+    : IRequest<Result<PagedList<PrecioResponse>>>
+    {
+        public GetPreciosRequest? PreciosRequest {get;set;} 
+    }
+
+    internal class GetPreciosQueryHandler :
+    IRequestHandler<GetPreciosQueryRequest, Result<PagedList<PrecioResponse>>>
+    {
         private readonly MasterNetDbContext _context;
         private readonly IMapper _mapper;
 
@@ -26,48 +29,59 @@ internal class GetPreciosQueryHandler : IRequestHandler<GetPreciosQueryRequest, 
             _mapper = mapper;
         }
 
+        public async Task<Result<PagedList<PrecioResponse>>> Handle(
+            GetPreciosQueryRequest request, 
+            CancellationToken cancellationToken
+        )
+        {
         
-    public async Task<Result<PagedList<PrecioResponse>>> Handle(GetPreciosQueryRequest request, CancellationToken cancellationToken)
-    {
-        IQueryable<Precio> queryable = _context.Precios!;
+            IQueryable<Precio> queryable = _context.Precios!;
 
-           var predicate = ExpressionBuilder.New<Precio>();
+            var predicate = ExpressionBuilder.New<Precio>();
 
-           if(!string.IsNullOrEmpty(request.PreciosRequest!.Nombre))
-           {
-            predicate = predicate.And(y => y.Nombre!.Contains(request.PreciosRequest!.Nombre));
-           }
+            if(!string.IsNullOrEmpty(request.PreciosRequest!.Nombre))
+            {   
+                predicate  = predicate
+                .And(y => y.Nombre!.Contains(request.PreciosRequest!.Nombre));
+            }
 
-           if(!string.IsNullOrEmpty(request.PreciosRequest.OrderBy))
-           {
-            Expression<Func<Precio,object>>? orderBySelector =
-            request.PreciosRequest.OrderBy.ToLower() switch
+            if(!string.IsNullOrEmpty(request.PreciosRequest!.OrderBy))
             {
-                "nombre" => precio => precio.Nombre!,
-                "precio" => precio => precio.PrecioActual!,
-                _ => precio => precio.Nombre!
-            };
+                Expression<Func<Precio, object>>? orderSelector = 
+                    request.PreciosRequest.OrderBy.ToLower() switch
+                    {
+                        "nombre" => x => x.Nombre!,
+                        "precio" => x => x.PrecioActual,
+                        _ =>x => x.Nombre!
+                    };
 
-            bool orderBy = request.PreciosRequest.OrderAsc.HasValue
-            ? request.PreciosRequest.OrderAsc.Value
-            : true;
+                    bool orderBy = request.PreciosRequest.OrderAsc.HasValue
+                        ? request.PreciosRequest.OrderAsc.Value
+                        : true;
+                    
+                    queryable = orderBy
+                                ? queryable.OrderBy(orderSelector)
+                                : queryable.OrderByDescending(orderSelector);
+            }
 
-            queryable = orderBy ? queryable.OrderBy(orderBySelector) : queryable.OrderByDescending(orderBySelector);
+            queryable = queryable.Where(predicate);
 
-           }
+            var preciosQuery = queryable
+                    .ProjectTo<PrecioResponse>(_mapper.ConfigurationProvider)
+                    .AsQueryable();
+           
 
-           queryable = queryable.Where(predicate);
+           var pagination = await PagedList<PrecioResponse>
+            .CreateAsync(preciosQuery, 
+                request.PreciosRequest.PageNumber, 
+                request.PreciosRequest.PageSize
+           );
 
-           var preciosQuery =
-            queryable
-            .ProjectTo<PrecioResponse>(_mapper.ConfigurationProvider)
-            .AsQueryable();
-
-            var pagination = await PagedList<PrecioResponse>.CreateAsync(preciosQuery,request.PreciosRequest.PageNumber,request.PreciosRequest.PageSize);
-
-            return Result<PagedList<PrecioResponse>>.Success(pagination);
+           return Result<PagedList<PrecioResponse>>.Success(pagination);
+        }
     }
 }
+
 
 public record PrecioResponse(
     Guid? Id,

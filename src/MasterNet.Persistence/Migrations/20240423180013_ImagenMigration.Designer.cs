@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MasterNet.Persistence.Migrations
 {
     [DbContext(typeof(MasterNetDbContext))]
-    [Migration("20250206223603_ImagenMigration")]
+    [Migration("20240423180013_ImagenMigration")]
     partial class ImagenMigration
     {
         /// <inheritdoc />
@@ -67,66 +67,66 @@ namespace MasterNet.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e2545b68-19a6-48ed-a124-402d41cd1b4d"),
-                            Descripcion = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(146),
-                            Titulo = "Incredible Rubber Ball"
-                        },
-                        new
-                        {
-                            Id = new Guid("d6515399-e5c5-4bd4-a8de-94ee23c20c9b"),
-                            Descripcion = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(181),
-                            Titulo = "Incredible Fresh Pizza"
-                        },
-                        new
-                        {
-                            Id = new Guid("e96393a8-d248-4a4c-85ce-4b3c5dbbfed0"),
+                            Id = new Guid("21832173-49eb-4c12-998d-1c72ff76645a"),
                             Descripcion = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(197),
-                            Titulo = "Ergonomic Wooden Bike"
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3653),
+                            Titulo = "Incredible Granite Keyboard"
                         },
                         new
                         {
-                            Id = new Guid("ca5a6856-6500-466b-abde-324f40f04368"),
-                            Descripcion = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(213),
-                            Titulo = "Ergonomic Plastic Hat"
-                        },
-                        new
-                        {
-                            Id = new Guid("f3775838-a1cb-4dc8-9e69-734ad9cc6916"),
-                            Descripcion = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(227),
-                            Titulo = "Practical Steel Shoes"
-                        },
-                        new
-                        {
-                            Id = new Guid("4f26bee2-f49f-43f6-a375-8ff67b5186e2"),
-                            Descripcion = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(240),
-                            Titulo = "Rustic Cotton Table"
-                        },
-                        new
-                        {
-                            Id = new Guid("230d3e08-fa39-4710-98cd-18b3fff6346a"),
-                            Descripcion = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(253),
-                            Titulo = "Practical Metal Mouse"
-                        },
-                        new
-                        {
-                            Id = new Guid("e996ac26-9dfa-4057-8336-1f2ea212c846"),
-                            Descripcion = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(266),
-                            Titulo = "Handmade Metal Fish"
-                        },
-                        new
-                        {
-                            Id = new Guid("89d4a6fb-538e-4bd9-bf9d-089d8a5a0e18"),
+                            Id = new Guid("8aa50d01-d50f-419b-a498-aee133481c1e"),
                             Descripcion = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            FechaPublicacion = new DateTime(2025, 2, 6, 22, 35, 57, 730, DateTimeKind.Utc).AddTicks(278),
-                            Titulo = "Licensed Granite Towels"
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3683),
+                            Titulo = "Unbranded Cotton Tuna"
+                        },
+                        new
+                        {
+                            Id = new Guid("e17ae8e1-d605-4360-81a4-5b705bfa67c6"),
+                            Descripcion = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3700),
+                            Titulo = "Refined Fresh Cheese"
+                        },
+                        new
+                        {
+                            Id = new Guid("deb9f6ae-6466-48a1-92c1-8e5d419ecf68"),
+                            Descripcion = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3716),
+                            Titulo = "Practical Granite Pizza"
+                        },
+                        new
+                        {
+                            Id = new Guid("bd5fb5fe-2962-420b-b25f-8b9bda1b7fc9"),
+                            Descripcion = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3731),
+                            Titulo = "Handmade Wooden Towels"
+                        },
+                        new
+                        {
+                            Id = new Guid("f71a0693-e5a5-4808-9179-f47eba8b61f0"),
+                            Descripcion = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3748),
+                            Titulo = "Rustic Plastic Towels"
+                        },
+                        new
+                        {
+                            Id = new Guid("60638e89-b745-4637-a290-082ac4a4e194"),
+                            Descripcion = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3761),
+                            Titulo = "Intelligent Cotton Shoes"
+                        },
+                        new
+                        {
+                            Id = new Guid("fa0ffd86-4db2-43fb-b537-01315aab3776"),
+                            Descripcion = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3773),
+                            Titulo = "Fantastic Steel Shirt"
+                        },
+                        new
+                        {
+                            Id = new Guid("adfdb061-a174-49b6-ba26-d56e59079a31"),
+                            Descripcion = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            FechaPublicacion = new DateTime(2024, 4, 23, 18, 0, 12, 219, DateTimeKind.Utc).AddTicks(3789),
+                            Titulo = "Refined Cotton Chicken"
                         });
                 });
 
@@ -182,73 +182,73 @@ namespace MasterNet.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("372323b2-c7c1-4bde-b7ea-c25864531cd7"),
-                            Apellidos = "Armstrong",
-                            Grado = "Corporate Accounts Supervisor",
-                            Nombre = "Elian"
+                            Id = new Guid("a6e653eb-6436-4185-ad6a-9ec51f11ee8c"),
+                            Apellidos = "Howe",
+                            Grado = "Dynamic Infrastructure Strategist",
+                            Nombre = "Jarod"
                         },
                         new
                         {
-                            Id = new Guid("bbb4b299-a1a1-40e7-b8c9-2429a472ecc8"),
-                            Apellidos = "Kunde",
-                            Grado = "Internal Security Associate",
-                            Nombre = "Marion"
+                            Id = new Guid("a272713b-df29-4baa-8272-4d83feb9ef33"),
+                            Apellidos = "Brekke",
+                            Grado = "Internal Intranet Designer",
+                            Nombre = "Viviane"
                         },
                         new
                         {
-                            Id = new Guid("b8de6e75-5648-4f24-aca6-da23df459680"),
-                            Apellidos = "Bergstrom",
-                            Grado = "Internal Group Officer",
-                            Nombre = "Emmett"
+                            Id = new Guid("6676f127-fad7-4f32-8bfb-49928052d8ee"),
+                            Apellidos = "Hammes",
+                            Grado = "Dynamic Intranet Planner",
+                            Nombre = "Lucie"
                         },
                         new
                         {
-                            Id = new Guid("3159ac42-375f-47f4-baa2-06ca7201a149"),
-                            Apellidos = "Balistreri",
-                            Grado = "Direct Infrastructure Orchestrator",
-                            Nombre = "Elena"
+                            Id = new Guid("0bb5dafa-ddaa-4fc4-bb5a-3bdf657715b9"),
+                            Apellidos = "Koepp",
+                            Grado = "Product Quality Designer",
+                            Nombre = "Pedro"
                         },
                         new
                         {
-                            Id = new Guid("3cdd28e3-116e-4d96-b787-43590f3622cc"),
-                            Apellidos = "Stark",
-                            Grado = "Direct Response Technician",
-                            Nombre = "Ricky"
+                            Id = new Guid("3eb3f29a-2bbd-462b-944c-53688fdee1aa"),
+                            Apellidos = "Sporer",
+                            Grado = "Central Branding Developer",
+                            Nombre = "Moshe"
                         },
                         new
                         {
-                            Id = new Guid("9d09c99c-5b6a-4bad-b5b8-59fcf086254d"),
-                            Apellidos = "Williamson",
-                            Grado = "Regional Creative Producer",
-                            Nombre = "Della"
+                            Id = new Guid("b3e9130a-8bb5-4a23-99c5-4eed5a244058"),
+                            Apellidos = "Champlin",
+                            Grado = "Legacy Communications Analyst",
+                            Nombre = "Deion"
                         },
                         new
                         {
-                            Id = new Guid("28693ee1-072b-41b6-8374-0e53fe75027c"),
-                            Apellidos = "Wyman",
-                            Grado = "Regional Data Agent",
-                            Nombre = "Elton"
-                        },
-                        new
-                        {
-                            Id = new Guid("f068939b-2d5f-4524-b387-c507df9dcd5f"),
+                            Id = new Guid("f9ec5649-5243-4c39-9081-db05340ce47d"),
                             Apellidos = "Feil",
-                            Grado = "Lead Configuration Producer",
-                            Nombre = "Myrtie"
+                            Grado = "Forward Integration Technician",
+                            Nombre = "Emmy"
                         },
                         new
                         {
-                            Id = new Guid("e1328409-796a-4e7e-bfe1-ae27ffe99164"),
-                            Apellidos = "Pfannerstill",
-                            Grado = "Legacy Usability Facilitator",
-                            Nombre = "Chester"
+                            Id = new Guid("26166ea6-044f-438d-974e-8750fcee3850"),
+                            Apellidos = "Leuschke",
+                            Grado = "National Directives Technician",
+                            Nombre = "Colby"
                         },
                         new
                         {
-                            Id = new Guid("85bce002-e242-427e-9225-6d8a42dc65cb"),
-                            Apellidos = "Corwin",
-                            Grado = "Direct Implementation Assistant",
-                            Nombre = "Wade"
+                            Id = new Guid("0245cdf2-530e-42a3-813e-c71184f2a941"),
+                            Apellidos = "Haag",
+                            Grado = "International Intranet Architect",
+                            Nombre = "Ernestina"
+                        },
+                        new
+                        {
+                            Id = new Guid("4e07dcdd-e353-4f43-a0b8-bde6b7f59b42"),
+                            Apellidos = "Block",
+                            Grado = "Dynamic Communications Director",
+                            Nombre = "Floyd"
                         });
                 });
 
@@ -299,7 +299,7 @@ namespace MasterNet.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9fade2d0-9b70-4c48-b838-01e5c04c8d3f"),
+                            Id = new Guid("9d14524c-95ee-4630-afc5-5f9364389925"),
                             Nombre = "Precio Regular",
                             PrecioActual = 10.0m,
                             PrecioPromocion = 8.0m
@@ -404,13 +404,13 @@ namespace MasterNet.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c9092e39-2a01-4c8e-8f35-4a6cee27336f",
+                            Id = "035d70d4-d4e7-45a2-9f75-74ac529e91ed",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729",
+                            Id = "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4",
                             Name = "CLIENT",
                             NormalizedName = "CLIENT"
                         });
@@ -444,98 +444,98 @@ namespace MasterNet.Persistence.Migrations
                             Id = 1,
                             ClaimType = "POLICIES",
                             ClaimValue = "CURSO_READ",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 2,
                             ClaimType = "POLICIES",
                             ClaimValue = "CURSO_UPDATE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 3,
                             ClaimType = "POLICIES",
                             ClaimValue = "CURSO_WRITE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 4,
                             ClaimType = "POLICIES",
                             ClaimValue = "CURSO_DELETE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 5,
                             ClaimType = "POLICIES",
                             ClaimValue = "INSTRUCTOR_CREATE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 6,
                             ClaimType = "POLICIES",
                             ClaimValue = "INSTRUCTOR_READ",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 7,
                             ClaimType = "POLICIES",
                             ClaimValue = "INSTRUCTOR_UPDATE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 8,
                             ClaimType = "POLICIES",
                             ClaimValue = "COMENTARIO_READ",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 9,
                             ClaimType = "POLICIES",
                             ClaimValue = "COMENTARIO_DELETE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 10,
                             ClaimType = "POLICIES",
                             ClaimValue = "COMENTARIO_CREATE",
-                            RoleId = "c9092e39-2a01-4c8e-8f35-4a6cee27336f"
+                            RoleId = "035d70d4-d4e7-45a2-9f75-74ac529e91ed"
                         },
                         new
                         {
                             Id = 11,
                             ClaimType = "POLICIES",
                             ClaimValue = "CURSO_READ",
-                            RoleId = "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729"
+                            RoleId = "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4"
                         },
                         new
                         {
                             Id = 12,
                             ClaimType = "POLICIES",
                             ClaimValue = "INSTRUCTOR_READ",
-                            RoleId = "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729"
+                            RoleId = "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4"
                         },
                         new
                         {
                             Id = 13,
                             ClaimType = "POLICIES",
                             ClaimValue = "COMENTARIO_READ",
-                            RoleId = "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729"
+                            RoleId = "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4"
                         },
                         new
                         {
                             Id = 14,
                             ClaimType = "POLICIES",
                             ClaimValue = "COMENTARIO_CREATE",
-                            RoleId = "cfdb83a2-f3be-4a4d-afe7-395e2d7e3729"
+                            RoleId = "4e7cf010-9c90-4eeb-bf9f-0aa00e4f7fc4"
                         });
                 });
 

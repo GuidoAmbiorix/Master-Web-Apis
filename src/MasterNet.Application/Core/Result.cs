@@ -18,4 +18,5 @@ public class Result<T>
         IsSuccess = false,  Error = error
     };
 
+
 }
